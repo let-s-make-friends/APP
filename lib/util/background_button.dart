@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import '../util/color.dart';
 
-class LoginButton extends StatelessWidget {
+class BackgroundButton extends StatelessWidget {
   final String buttonText;
   final Function() onButtonPressed;
 
-  const LoginButton({
+  const BackgroundButton({
     super.key,
     required this.buttonText,
     required this.onButtonPressed,
@@ -18,7 +18,7 @@ class LoginButton extends StatelessWidget {
     return ElevatedButton(
       onPressed:onButtonPressed,
       style: ElevatedButton.styleFrom(
-          backgroundColor: Color(colorData.buttonColor),
+          backgroundColor: Color(colorData.mainColor),
           padding: EdgeInsets.symmetric(vertical: 20.0),
           maximumSize: Size(size.width, 60),
           minimumSize: Size(size.width, 40),
