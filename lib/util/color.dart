@@ -1,3 +1,3 @@
 class ColorData{
-  final int buttonColor = 0xFF003CFF;
+  final int mainColor = 0xFF003CFF;
 }
