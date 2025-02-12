@@ -3,7 +3,7 @@ import 'package:gsm_certification_system/util/color.dart';
 import 'package:gsm_certification_system/util/image.dart';
 
 import '../controller/start_controller.dart';
-import '../util/login_button.dart';
+import '../util/background_button.dart';
 
 class StartScreen extends StatelessWidget {
   StartScreen({super.key});
@@ -33,7 +33,7 @@ class StartScreen extends StatelessWidget {
                   height: size.height * 0.15,
                   child: Column(
                     children: [
-                      LoginButton(
+                      BackgroundButton(
                         buttonText: '로그인',
                         onButtonPressed: () {
                           startController.goToLogInScreen();
@@ -48,7 +48,7 @@ class StartScreen extends StatelessWidget {
                         },
                         style: OutlinedButton.styleFrom(
                             side: BorderSide(
-                              color: Color(colorData.buttonColor),
+                              color: Color(colorData.mainColor),
                               width: 1,
                             ),
                             padding: EdgeInsets.symmetric(vertical: 20.0),
@@ -59,8 +59,8 @@ class StartScreen extends StatelessWidget {
                         child: Text(
                           '회원 가입',
                           style: TextStyle(
-                              color: Color(colorData.buttonColor),
-                              fontWeight: FontWeight.normal),
+                              color: Color(colorData.mainColor),
+                              fontWeight: FontWeight.w600),
                         ),
                       ),
                     ],
