@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:gsm_certification_system/controller/log_in_controller.dart';
 import '../util/color.dart';
 import '../util/text.dart';
-import '../util/login_text_field.dart';
-import '../util/login_button.dart';
+import '../util/custom_text_field.dart';
+import '../util/background_button.dart';
 
 class LogInScreen extends StatelessWidget {
   LogInScreen({super.key});
 
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  final LogInController logInController = Get.put(LogInController());
 
   @override
   Widget build(BuildContext context) {
@@ -26,27 +27,29 @@ class LogInScreen extends StatelessWidget {
             SizedBox(
               height: size.height * 0.04,
             ),
-            LoginTextField(
+            CustomTextField(
               labelText: '이메일',
               hintText: '학교 이메일을 입력해주세요',
               obscureText: false,
-              controller: emailController,
+              controller: logInController.emailController,
             ),
             SizedBox(
               height: size.height * 0.015,
             ),
-            LoginTextField(
+            CustomTextField(
               labelText: '비밀번호',
               hintText: '비밀번호를 입력해주세요',
               obscureText: true,
-              controller: passwordController,
+              controller: logInController.passwordController,
             ),
             SizedBox(
               height: size.height * 0.04,
             ),
-            LoginButton(
+            BackgroundButton(
               buttonText: '로그인',
-              onButtonPressed: () {},
+              onButtonPressed: () {
+                logInController.login();
+              },
             )
           ],
         ),

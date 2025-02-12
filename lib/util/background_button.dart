@@ -26,7 +26,7 @@ class BackgroundButton extends StatelessWidget {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
       child: Text(
         buttonText,
-        style: TextStyle(color: Colors.white, fontWeight: FontWeight.normal),
+        style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
       ),
     );
   }

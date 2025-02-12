@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
           fontFamily: "Pretendard",
           scaffoldBackgroundColor: Colors.white,
@@ -22,8 +23,8 @@ class MyApp extends StatelessWidget {
       home: StartScreen(),
       getPages: [
         GetPage(name: '/start', page: () => StartScreen()),
-        GetPage(name: '/login', page: () => LogInScreen()),
-        GetPage(name: '/signup', page: () => SignUpScreen()),
+        GetPage(name: '/login', page: () => LogInScreen(),transition: Transition.fade),
+        GetPage(name: '/signup', page: () => SignUpScreen(),transition: Transition.fade),
       ],
     );
   }
