@@ -37,6 +37,8 @@ dependencies:
   flutter_svg: ^2.0.17
   get: ^4.6.6
   auto_size_text: ^3.0.0
+  flutter_screenutil: ^5.9.3
+  text_divider: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -103,6 +105,11 @@ flutter:
     - family: PottaOne
       fonts:
         - asset: assets/fonts/PottaOne-Regular.ttf
+
+
+    - family: chab
+      fonts:
+        - asset: assets/fonts/chab.ttf
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
