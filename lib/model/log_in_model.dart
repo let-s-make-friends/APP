@@ -1,28 +1,23 @@
-import 'package:http/http.dart' as http;
-import 'dart:convert';
 
 class LogInModel {
-  Future<Map<String, dynamic>?> login(String username, String password) async {
-    final response = await http.post(
-      Uri.parse("https://your-server.com/api/login"),
-      headers: {"Content-Type": "application/json"},
-      body: jsonEncode({
-        "username": username,
-        "password": password,
-      }),
-    );
+  final String accessToken;
+  final String refreshToken;
+  final String accessTokenExp;
+  final String refreshTokenExp;
 
-    if (response.statusCode == 200) {
-      final data = jsonDecode(response.body);
-      return {
-        "message": data["message"], // 메시지 포함
-        "accessToken": data["token"]["accessToken"],
-        "refreshToken": data["token"]["refreshToken"],
-        "accessTokenExp": data["token"]["accessTokenExp"],
-        "refreshTokenExp": data["token"]["refreshTokenExp"],
-      };
-    } else {
-      return null;
-    }
+  LogInModel({
+    required this.accessToken,
+    required this.refreshToken,
+    required this.accessTokenExp,
+    required this.refreshTokenExp,
+  });
+
+  factory LogInModel.fromJson(Map<String, dynamic> json) {
+    return LogInModel(
+      accessToken: json["accessToken"],
+      refreshToken: json["refreshToken"],
+      accessTokenExp: json["accessTokenExp"],
+      refreshTokenExp: json["refreshTokenExp"],
+    );
   }
 }
