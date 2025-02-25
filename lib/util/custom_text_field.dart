@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'color.dart';
 
 class CustomTextField extends StatefulWidget {
@@ -7,7 +8,7 @@ class CustomTextField extends StatefulWidget {
   final TextEditingController? controller;
   final bool obscureText;
 
-  CustomTextField({
+  const CustomTextField({
     super.key,
     this.labelText = '',
     this.hintText = '',
@@ -35,14 +36,15 @@ class _CustomTextFieldState extends State<CustomTextField> {
           child: TextFormField(
             controller: widget.controller,
             obscureText: widget.obscureText,
+            obscuringCharacter: '●',
             decoration: InputDecoration(
               hintText: widget.hintText,
               enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(8.h),
                 borderSide: BorderSide(width: 1, color: borderColor),
               ),
               focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(8.h),
                 borderSide: BorderSide(width: 1, color: borderColor),
               ),
             ),
