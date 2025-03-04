@@ -22,7 +22,7 @@ class CustomOutlinedButton extends StatelessWidget {
           ),
           padding: EdgeInsets.symmetric(vertical: 20.0),
           maximumSize: Size(size.width, 60),
-          minimumSize: Size(size.width * 0.4, 40),
+          minimumSize: Size(size.width, 40),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
       child: Text(
