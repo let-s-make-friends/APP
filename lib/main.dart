@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:gsm_certification_system/view/activity_screen.dart';
 import 'package:gsm_certification_system/view/log_in.dart';
 import 'package:gsm_certification_system/view/main_screen.dart';
 import 'package:gsm_certification_system/view/signUp/sign_up_check_number.dart';
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
               fontFamily: "Pretendard",
               scaffoldBackgroundColor: Colors.white,
               appBarTheme: AppBarTheme(backgroundColor: Colors.white)),
-          home: MainScreen(),
+          home: StartScreen(),
           getPages: [
             GetPage(name: '/start', page: () => StartScreen()),
             GetPage(
@@ -50,6 +51,14 @@ class MyApp extends StatelessWidget {
                 name: '/signupPassword',
                 page: () => SignUpPassword(),
                 transition: Transition.rightToLeft),
+            GetPage(
+                name: '/main',
+                page: () => MainScreen(),
+                transition: Transition.rightToLeft),GetPage(
+                name: '/activity',
+                page: () => ActivityScreen(),
+                transition: Transition.rightToLeft),
+
           ],
         );
       },
