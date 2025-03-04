@@ -4,8 +4,7 @@ import 'package:get/get.dart';
 import 'package:gsm_certification_system/view/activity_screen.dart';
 import 'package:gsm_certification_system/view/log_in.dart';
 import 'package:gsm_certification_system/view/main_screen.dart';
-import 'package:gsm_certification_system/view/signUp/sign_up_check_number.dart';
-import 'package:gsm_certification_system/view/signUp/sign_up_password.dart';
+import 'package:gsm_certification_system/view/signUp/sign_up.dart';
 import 'package:gsm_certification_system/view/start.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -44,13 +43,9 @@ class MyApp extends StatelessWidget {
                 page: () => LogInScreen(),
                 transition: Transition.fade),
             GetPage(
-                name: '/signupCheckNumber',
+                name: '/signup',
                 page: () => SignUpScreen(),
                 transition: Transition.fade),
-            GetPage(
-                name: '/signupPassword',
-                page: () => SignUpPassword(),
-                transition: Transition.rightToLeft),
             GetPage(
                 name: '/main',
                 page: () => MainScreen(),
