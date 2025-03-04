@@ -37,7 +37,6 @@ class LogInController extends GetxController {
       }
 
       final data = jsonDecode(response.body);
-      print(data);
 
       // status가 OK이고 code가 200인 경우에만 처리
       if (data['code'] == 200 && data['status'] == 'OK') {
