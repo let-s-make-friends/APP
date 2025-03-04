@@ -6,6 +6,6 @@ class StartController extends GetxController {
   }
 
   void goToSignUpScreen() {
-    Get.toNamed('/signupCheckNumber');
+    Get.toNamed('/signup');
   }
 }
