@@ -30,7 +30,12 @@ class _CustomTextFieldState extends State<CustomTextField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(widget.labelText),
+        widget.labelText.isEmpty
+            ? Container()
+            : Text(
+                widget.labelText,
+                style: TextStyle(fontSize: 16.sp),
+              ),
         Form(
           key: _formkey,
           child: TextFormField(
@@ -40,7 +45,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
             decoration: InputDecoration(
               hintText: widget.hintText,
               enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8.h),
+                borderRadius: BorderRadius.circular(12.h),
                 borderSide: BorderSide(width: 1, color: borderColor),
               ),
               focusedBorder: OutlineInputBorder(
