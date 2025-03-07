@@ -2,14 +2,13 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'dart:typed_data';
+import '../util/base_url.dart';
 
 class SignUpController extends GetxController {
-  final String baseUrl =
-      'https://port-0-gsm-certification-system-be-m7n6efd42ed462fc.sel4.cloudtype.app';
+  final String baseUrl = BaseUrl().baseUrl;
   final TextEditingController checkEmailController = TextEditingController();
   final TextEditingController checkVerificationCodeController =
-  TextEditingController();
+      TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController checkPasswordController = TextEditingController();
 
@@ -89,6 +88,7 @@ class SignUpController extends GetxController {
               backgroundColor: Colors.green,
               colorText: Colors.white,
             );
+            Get.toNamed('/start');
           } else {
             String errorMessage = data['message'];
             Get.snackbar(

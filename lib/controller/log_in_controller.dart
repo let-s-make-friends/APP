@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import '../model/log_in_model.dart';
+import '../util/base_url.dart';
 
 class LogInController extends GetxController {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final String baseUrl =
-      'https://port-0-gsm-certification-system-be-m7n6efd42ed462fc.sel4.cloudtype.app';
+  final String baseUrl = BaseUrl().baseUrl;
   var isLoading = false.obs;
   var loginModel = Rxn<LogInModel>();
   var errorMessage = ''.obs;
@@ -53,6 +53,8 @@ class LogInController extends GetxController {
           backgroundColor: Colors.green,
           colorText: Colors.white,
         );
+        Get.toNamed('/main');
+
       } else {
         errorMessage.value = data['message'] ?? '로그인 실패';
         Get.snackbar(
@@ -82,7 +84,7 @@ class LogInController extends GetxController {
         colorText: Colors.white,
       );
     } catch (e) {
-      errorMessage.value = '알 수 없는 오류 발생: $e';
+      errorMessage.value = '이메일 또는 비밀번호를 다시 입력 해주십시오 ';
       Get.snackbar(
         '오류',
         errorMessage.value,
