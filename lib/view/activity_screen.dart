@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class ActivityScreen extends StatelessWidget {
   const ActivityScreen({super.key});
@@ -16,9 +17,14 @@ class ActivityScreen extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Icon(
-                    Icons.arrow_back_ios_sharp,
-                    size: 24.w,
+                  GestureDetector(
+                    onTap: () {
+                      Get.back();
+                    },
+                    child: Icon(
+                      Icons.arrow_back_ios_sharp,
+                      size: 24.w,
+                    ),
                   ),
                   SizedBox(
                     width: 12.w,

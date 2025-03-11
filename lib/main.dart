@@ -4,7 +4,9 @@ import 'package:get/get.dart';
 import 'package:gsm_certification_system/view/activity_screen.dart';
 import 'package:gsm_certification_system/view/log_in.dart';
 import 'package:gsm_certification_system/view/main_screen.dart';
-import 'package:gsm_certification_system/view/signUp/sign_up.dart';
+import 'package:gsm_certification_system/view/profile.dart';
+import 'package:gsm_certification_system/view/reading_screen.dart';
+import 'package:gsm_certification_system/view/sign_up.dart';
 import 'package:gsm_certification_system/view/start.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -35,7 +37,7 @@ class MyApp extends StatelessWidget {
               fontFamily: "Pretendard",
               scaffoldBackgroundColor: Colors.white,
               appBarTheme: AppBarTheme(backgroundColor: Colors.white)),
-          home: StartScreen(),
+          home: MainScreen(),
           getPages: [
             GetPage(name: '/start', page: () => StartScreen()),
             GetPage(
@@ -49,11 +51,19 @@ class MyApp extends StatelessWidget {
             GetPage(
                 name: '/main',
                 page: () => MainScreen(),
-                transition: Transition.rightToLeft),GetPage(
+                transition: Transition.rightToLeft),
+            GetPage(
                 name: '/activity',
                 page: () => ActivityScreen(),
                 transition: Transition.rightToLeft),
-
+            GetPage(
+                name: '/profile',
+                page: () => ProfileScreen(),
+                transition: Transition.rightToLeft),
+            GetPage(
+                name: '/reading',
+                page: () => ReadingScreen(),
+                transition: Transition.rightToLeft),
           ],
         );
       },
