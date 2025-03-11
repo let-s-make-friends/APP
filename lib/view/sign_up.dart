@@ -5,9 +5,9 @@ import 'package:gsm_certification_system/controller/sign_up_controller.dart';
 import 'package:gsm_certification_system/util/custom_outlined_button.dart';
 import 'package:gsm_certification_system/util/custom_text_field.dart';
 
-import '../../util/background_button.dart';
-import '../../util/color.dart';
-import '../../util/text.dart';
+import '../util/background_button.dart';
+import '../util/color.dart';
+import '../util/text.dart';
 
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({super.key});
